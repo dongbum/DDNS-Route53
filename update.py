@@ -46,3 +46,24 @@ else:
     print('not same')
 
 client = boto3.client('route53')
+response = client.change_resource_record_sets(
+    HostedZoneId='string',
+    ChangeBatch={
+        'Comment': 'string',
+        'Changes': [
+            {
+                'Action': 'UPSERT',
+                'ResourceRecordSet': {
+                    'Name': 'home.83rpm.com',
+                    'Type': 'A',
+                    'TTL': 60
+                },
+                'ResourceRecords': [
+                    {
+                        'Value': 'IP'
+                    }
+                ]
+            }
+        ]
+    }
+)
