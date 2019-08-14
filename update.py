@@ -2,27 +2,12 @@
 
 import os
 import boto3
-import socket
-import urllib
-import re
-from urllib.request import urlopen
-from bs4 import BeautifulSoup
 
-# print(socket.gethostbyname(socket.gethostname()))
-# print(socket.gethostbyname_ex(socket.gethostname()))
-# print(socket.gethostbyname(socket.getfqdn()))
+from ddns.iputils import IPUtils
 
+current_ip = IPUtils.getrealip()
 
-s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-s.connect(("gmail.com", 80))
-r = s.getsockname()[0]
-s.close()
-# print(r)
-
-html = urlopen("http://bot.whatismyipaddress.com")
-current_ip = BeautifulSoup(html, "html.parser")
-
-print(str(current_ip)) # 실제 아이피를 가져올 수 있다.
+print(current_ip) # 실제 아이피를 가져올 수 있다.
 
 # IP를 저장해놓은 파일을 열어 예전 아이피와 비교한다.
 try:
@@ -60,7 +45,7 @@ response = client.change_resource_record_sets(
                 },
                 'ResourceRecords': [
                     {
-                        'Value': 'IP'
+                        'Value': '%s' % current_ip
                     }
                 ]
             }
