@@ -5,7 +5,7 @@ from ddns.config import Config
 
 class AWSCommand:
     @staticmethod
-    def update_ip(domain, current_ip):
+    def update_ip(current_ip):
         config = Config()
         domain = config.get_domain()
         aws_hosted_zone_id = config.get_aws_hosted_zone_id()
