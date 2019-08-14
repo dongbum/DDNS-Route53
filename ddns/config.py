@@ -8,9 +8,5 @@ class Config:
         config.read('config.ini')
         self.domain = config['DEFAULT']['DOMAIN']
         self.aws_hosted_zone_id = config['DEFAULT']['AWS_HOSTED_ZONE_ID']
-
-    def get_domain(self):
-        return self.domain
-
-    def get_aws_hosted_zone_id(self):
-        return self.aws_hosted_zone_id
+        self.aws_access_key_id = config['DEFAULT']['AWS_ACCESS_KEY_ID']
+        self.aws_secret_access_key = config['DEFAULT']['AWS_ACCESS_SECRET_KEY']
