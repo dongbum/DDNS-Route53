@@ -37,3 +37,28 @@ class AWSCommand:
                 ]
             }
         )
+
+    @staticmethod
+    def get_ip():
+        config = Config()
+        domain = config.domain
+        aws_hosted_zone_id = config.aws_hosted_zone_id
+        aws_access_key_id = config.aws_access_key_id
+        aws_access_secret_key = config.aws_secret_access_key
+
+        client = boto3.client('route53',
+                              aws_access_key_id=aws_access_key_id,
+                              aws_secret_access_key=aws_access_secret_key)
+
+        response = client.list_resource_record_sets(
+            HostedZoneId=aws_hosted_zone_id,
+            StartRecordName=domain,
+            StartRecordType='A'
+        )
+
+        # print(response['ResourceRecordSets'])
+
+        for resource in response['ResourceRecordSets']:
+            # print(str(resource['Name']) + ' : ' + str(domain))
+            if str(domain) in str(resource['Name']):
+                return str(resource['ResourceRecords'][0]['Value'])
