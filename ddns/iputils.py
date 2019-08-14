@@ -3,13 +3,17 @@
 import socket
 from urllib.request import urlopen
 from bs4 import BeautifulSoup
+from ddns.customerror import IPcheckError
 
 class IPUtils:
     @staticmethod
     def getrealip():
-        html = urlopen("http://bot.whatismyipaddress.com")
-        current_ip = BeautifulSoup(html, "html.parser")
-        return str(current_ip)
+        try:
+            html = urlopen("http://bot.whatismyipaddress.com")
+            current_ip = BeautifulSoup(html, "html.parser")
+            return str(current_ip)
+        except:
+            raise IPcheckError('Get public IP Failed')
 
     @staticmethod
     def getlocalip(type):
