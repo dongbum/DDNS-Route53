@@ -24,8 +24,7 @@ current_ip = BeautifulSoup(html, "html.parser")
 
 print(str(current_ip)) # 실제 아이피를 가져올 수 있다.
 
-client = boto3.client('route53')
-
+# IP를 저장해놓은 파일을 열어 예전 아이피와 비교한다.
 try:
     if os.path.exists('old_ip.txt'):
         f = open('old_ip.txt', mode='rt', encoding='utf-8')
@@ -40,3 +39,10 @@ try:
     print('old_ip : ' + old_ip)
 except FileNotFoundError:
     print('file error')
+
+if str(old_ip) == str(current_ip):
+    print('same')
+else:
+    print('not same')
+
+client = boto3.client('route53')
