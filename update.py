@@ -27,5 +27,6 @@ try:
         AWSCommand.update_ip(current_ip)
 
 except Exception as e:
+    print(e)
     Log.write(e)
     exit(-1)
