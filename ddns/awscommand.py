@@ -56,9 +56,6 @@ class AWSCommand:
             StartRecordType='A'
         )
 
-        # print(response['ResourceRecordSets'])
-
         for resource in response['ResourceRecordSets']:
-            # print(str(resource['Name']) + ' : ' + str(domain))
             if str(domain) in str(resource['Name']):
                 return str(resource['ResourceRecords'][0]['Value'])
