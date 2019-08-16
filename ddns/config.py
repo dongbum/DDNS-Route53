@@ -13,6 +13,7 @@ class Config:
             self.aws_access_key_id = config['DEFAULT']['AWS_ACCESS_KEY_ID']
             self.aws_secret_access_key = config['DEFAULT']['AWS_ACCESS_SECRET_KEY']
             self.get_ip = config['DEFAULT']['GET_IP']
+            self.check_url = config['DEFAULT']['CHECK_URL']
             self.log = config['DEFAULT']['LOG']
         except:
             raise ConfigParserError('Load config file failed.')

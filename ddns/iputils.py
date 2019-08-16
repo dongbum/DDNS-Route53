@@ -4,12 +4,14 @@ import socket
 from urllib.request import urlopen
 from bs4 import BeautifulSoup
 from ddns.customerror import IPcheckError
+from ddns.config import Config
 
 class IPUtils:
     @staticmethod
     def getrealip():
         try:
-            html = urlopen("http://bot.whatismyipaddress.com")
+            config = Config()
+            html = urlopen(config.check_url)
             current_ip = BeautifulSoup(html, "html.parser")
             return str(current_ip)
         except:
