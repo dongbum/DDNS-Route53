@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 import os
+from ddns.logmanager import Log
 
 class RecordFile:
 
@@ -22,5 +23,5 @@ class RecordFile:
 
                 return current_ip
         except:
-            print('file exception')
+            Log.write('file exception')
             return '127.0.0.1'
