@@ -5,12 +5,18 @@ import logging.handlers
 from ddns.config import Config
 
 class Log:
+    is_log = True
+
     logger = logging.getLogger('crumbs')
     logger.setLevel(logging.DEBUG)
 
     def __init__(self):
         config = Config()
         log_path = config.log
+
+        if str(log_path).upper() == 'NONE':
+            is_log = False
+            return
 
         formatter = logging.Formatter('[%(asctime)s|%(levelname)s|%(filename)s:%(lineno)s] %(message)s')
         file_max_bytes = 10 * 1024 * 1024
@@ -26,4 +32,5 @@ class Log:
 
     @classmethod
     def write(cls, message):
-        cls.logger.debug(message)
+        if cls.is_log:
+            cls.logger.debug(message)
