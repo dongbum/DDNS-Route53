@@ -2,16 +2,20 @@
 
 import logging
 import logging.handlers
+from ddns.config import Config
 
 class Log:
     logger = logging.getLogger('crumbs')
     logger.setLevel(logging.DEBUG)
 
     def __init__(self):
+        config = Config()
+        log_path = config.log
+
         formatter = logging.Formatter('[%(asctime)s|%(levelname)s|%(filename)s:%(lineno)s] %(message)s')
         file_max_bytes = 10 * 1024 * 1024
 
-        file_handler = logging.handlers.RotatingFileHandler(filename='./log/test.log', maxBytes=file_max_bytes)
+        file_handler = logging.handlers.RotatingFileHandler(filename=log_path, maxBytes=file_max_bytes)
         stream_handler = logging.StreamHandler()
 
         file_handler.setFormatter(formatter)
