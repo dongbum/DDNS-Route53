@@ -26,5 +26,5 @@ LOG=D:\logdir\logfilename.log
 ## Usage
 Run `python3 update.py` command on shell or cmd.
 
-## Copyright
-See LICENCE.txt
+## License
+Please see [LICENSE](LICENSE) file for more details.
