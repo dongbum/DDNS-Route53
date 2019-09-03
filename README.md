@@ -27,7 +27,7 @@ LOG=D:\logdir\logfilename.log
 Run `python3 update.py` command on shell or cmd.
 
 ## Architecture
-![Architecture Diagram](diagram\Architecture_Diagram.png)
+![Architecture Diagram](diagram/Architecture_Diagram.png)
 
 ## License
 Please see [LICENSE](LICENSE) file for more details.
