@@ -5,9 +5,12 @@ install:
   - pip install -r requirements.txt
   - pip install pytest
   - pip install pytest-cov
+  - pip install python-coveralls
   - pip install coveralls
+  - pip install coverage
+  - pip install nose
 script:
   - python3 update.py
-  - pytest --cov=.
+  - nosetests --with-coverage
 after_success:
   - coveralls
