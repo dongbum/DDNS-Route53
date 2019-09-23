@@ -1,5 +1,6 @@
 # DDNS-Route53
 [![Build Status](https://travis-ci.com/dongbum/DDNS-Route53.svg?branch=master)](https://travis-ci.com/dongbum/DDNS-Route53)
+[![Coverage Status](https://coveralls.io/repos/github/dongbum/DDNS-Route53/badge.svg?branch=master)](https://coveralls.io/github/dongbum/DDNS-Route53?branch=master)
 
 AWS Route53 Dynamic-DNS client made with Python.
 
