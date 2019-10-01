@@ -22,6 +22,6 @@ class RecordFile:
                 f.close()
 
                 return current_ip
-        except:
-            Log.write('file exception')
+        except BaseException as ex:
+            Log.write('File handle exception [%s]' % ex)
             return '127.0.0.1'

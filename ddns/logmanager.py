@@ -21,7 +21,7 @@ class Log:
             stream_handler.setFormatter(formatter)
             self.logger.addHandler(stream_handler)
         elif str(log_path).upper() == 'NONE':
-            is_log = False
+            self.is_log = False
             return
         else:
             file_max_bytes = 10 * 1024 * 1024
