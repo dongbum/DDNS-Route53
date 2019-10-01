@@ -2,6 +2,8 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/dongbum/DDNS-Route53/blob/master/LICENSE)
 [![Build Status](https://travis-ci.com/dongbum/DDNS-Route53.svg?branch=master)](https://travis-ci.com/dongbum/DDNS-Route53)
 [![Coverage Status](https://coveralls.io/repos/github/dongbum/DDNS-Route53/badge.svg?branch=master)](https://coveralls.io/github/dongbum/DDNS-Route53?branch=master)
+[![Language grade: Python](https://img.shields.io/lgtm/grade/python/g/dongbum/DDNS-Route53.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/dongbum/DDNS-Route53/context:python)
+[![Total alerts](https://img.shields.io/lgtm/alerts/g/dongbum/DDNS-Route53.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/dongbum/DDNS-Route53/alerts/)
 
 AWS Route53 Dynamic-DNS client made with Python.
 
