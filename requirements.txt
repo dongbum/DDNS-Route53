@@ -3,7 +3,7 @@ boto3==1.9.206
 botocore==1.12.206
 docutils==0.14
 jmespath==0.9.4
-python-dateutil==2.8.0
+python-dateutil==2.9.0.post0
 s3transfer==0.2.1
 six==1.12.0
 soupsieve==1.9.2
